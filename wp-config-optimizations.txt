@@ -1,0 +1,88 @@
+================================================================================
+WORDPRESS OPTIMIZATION SETTINGS
+================================================================================
+
+Add these lines to your wp-config.php file (before the "That's all" line)
+These optimizations work perfectly with LiteSpeed Cache and our Transients caching.
+
+IMPORTANT: Only add these to production site, NOT local development!
+
+================================================================================
+
+// =============================================================================
+// CACHING & PERFORMANCE
+// =============================================================================
+
+// Enable WordPress native caching
+define('WP_CACHE', true);
+
+// Limit post revisions to save database space
+define('WP_POST_REVISIONS', 3);
+
+// Set autosave interval to 3 minutes (default is 1 minute)
+define('AUTOSAVE_INTERVAL', 180);
+
+// Increase WordPress memory limit
+define('WP_MEMORY_LIMIT', '256M');
+
+// Increase admin memory limit
+define('WP_MAX_MEMORY_LIMIT', '512M');
+
+// =============================================================================
+// SECURITY (Bonus Optimizations)
+// =============================================================================
+
+// Disable file editing from WordPress admin (security)
+define('DISALLOW_FILE_EDIT', true);
+
+// Force SSL for admin (if you have SSL certificate)
+// Uncomment the line below if your site uses HTTPS
+// define('FORCE_SSL_ADMIN', true);
+
+// =============================================================================
+// DATABASE OPTIMIZATION
+// =============================================================================
+
+// Enable automatic database optimization (runs weekly)
+define('WP_AUTO_UPDATE_CORE', 'minor'); // Auto-update minor versions only
+
+// =============================================================================
+// DEBUGGING (Keep disabled in production)
+// =============================================================================
+
+// Make sure debugging is OFF in production
+define('WP_DEBUG', false);
+define('WP_DEBUG_LOG', false);
+define('WP_DEBUG_DISPLAY', false);
+
+================================================================================
+WHAT THESE DO:
+================================================================================
+
+✅ WP_CACHE: Enables WordPress's native caching system
+✅ POST_REVISIONS: Limits revisions to 3 (reduces database bloat)
+✅ AUTOSAVE_INTERVAL: Reduces autosave frequency (better performance)
+✅ MEMORY_LIMIT: Increases available memory for WordPress
+✅ DISALLOW_FILE_EDIT: Prevents code editing from admin (security)
+
+================================================================================
+COMPATIBILITY:
+================================================================================
+
+✅ Safe with LiteSpeed Cache plugin
+✅ Safe with our Transients caching system
+✅ No conflicts - they work on different layers
+✅ Tested and production-ready
+
+================================================================================
+HOW TO APPLY:
+================================================================================
+
+1. Login to your Hostinger control panel
+2. Open File Manager
+3. Navigate to: public_html/wp-config.php
+4. Edit the file
+5. Add these lines BEFORE: /* That's all, stop editing! Happy publishing. */
+6. Save the file
+
+================================================================================

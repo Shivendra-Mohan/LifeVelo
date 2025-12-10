@@ -1,0 +1,65 @@
+# WordPress Theme .gitignore
+# Exclude sensitive and environment-specific files
+
+# Backup files
+*.backup
+functions.php.backup
+
+# Mac system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows system files
+Thumbs.db
+Desktop.ini
+
+# Editor files
+*.swp
+*.swo
+*~
+.vscode/
+.idea/
+
+# Logs
+*.log
+error_log
+debug.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Node modules (if you use build tools)
+node_modules/
+package-lock.json
+
+# Composer dependencies (if used)
+vendor/
+
+# Environment-specific configuration
+# NOTE: These files should be created manually on server
+.env
+config-local.php
+wp-config-local.php
+
+# Custom login slug - IMPORTANT FOR SECURITY
+# DO NOT commit this file with actual login slug
+# inc/custom-login.php
+
+# User uploads (media files - too large for Git)
+# These should be transferred via FTP/SFTP
+uploads/
+
+# Cache files
+*.cache
+cache/
+
+# Compiled/minified assets (if you use build process)
+*.min.js
+*.min.css
+
+# Documentation that might reveal internal info
+DEVELOPMENT-NOTES.md
+TODO.md
+PRIVATE-*.md

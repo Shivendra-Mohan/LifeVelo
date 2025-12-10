@@ -1,0 +1,167 @@
+================================================================================
+CUSTOM LOGIN - LOCAL TESTING GUIDE
+================================================================================
+
+✅ SETUP COMPLETE - Ready for Testing!
+
+Files created/modified:
+- config.php (local test configuration)
+- functions.php (custom-login.php enabled)
+
+================================================================================
+TEST 1: Custom Login URL
+================================================================================
+
+Visit: http://lifevelo.com/shivendra-test-login
+
+Expected: ✅ WordPress login page should appear
+
+If working: Custom login URL is functional!
+
+================================================================================
+TEST 2: Default wp-login.php (Should Work - Localhost Whitelisted)
+================================================================================
+
+Visit: http://lifevelo.com/wp-login.php
+
+Expected: ✅ WordPress login page should appear
+
+Why it works: Localhost IP (127.0.0.1) is whitelisted in config.php
+
+If working: IP whitelist is functional! (This simulates Hostinger button)
+
+================================================================================
+TEST 3: Admin Dashboard Notice
+================================================================================
+
+1. Login to WordPress admin
+2. Go to Dashboard
+3. Look for a notice at the top
+
+Expected: ✅ Blue notice showing:
+   "🔒 Custom Login Security Active"
+   "Login URL: http://lifevelo.com/shivendra-test-login"
+
+If visible: Admin notice is working!
+
+================================================================================
+TEST 4: Logout
+================================================================================
+
+1. Click logout
+2. Should redirect to homepage
+
+Expected: ✅ Redirects to homepage (not login page)
+
+If working: Logout functionality preserved!
+
+================================================================================
+TEST 5: Password Reset
+================================================================================
+
+Visit: http://lifevelo.com/wp-login.php?action=lostpassword
+
+Expected: ✅ Password reset page appears
+
+If working: Password reset still functional!
+
+================================================================================
+WHAT TO EXPECT
+================================================================================
+
+✅ WORKING:
+- Custom URL: /shivendra-test-login
+- Default wp-login.php (because localhost is whitelisted)
+- Logout function
+- Password reset
+- Admin dashboard access
+
+❌ NOT WORKING (This is by design):
+- Nothing should break! Everything should work.
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+Problem: Can't access any login page
+------------------------------------
+Solution:
+1. Edit functions.php line 163
+2. Comment it: // require_once SHIVENDRA_THEME_DIR . '/inc/custom-login.php';
+3. Access: http://lifevelo.com/wp-admin
+
+
+Problem: White screen / Error
+-----------------------------
+Check: /wp-content/debug.log
+Look for PHP errors in custom-login.php
+
+
+Problem: 404 error on custom URL
+--------------------------------
+Solution:
+1. Login to wp-admin
+2. Go to Settings > Permalinks
+3. Click "Save Changes" (flush rewrite rules)
+4. Try custom URL again
+
+================================================================================
+SIMULATING PRODUCTION BEHAVIOR
+================================================================================
+
+To test how it will work in production (blocking non-whitelisted IPs):
+
+1. Edit config.php
+2. Change WHITELISTED_IPS to empty array:
+   define('WHITELISTED_IPS', array());
+
+3. Test again:
+   - Custom URL: ✅ Should work
+   - wp-login.php: ❌ Should show 404
+
+4. This simulates maximum security mode (no Hostinger button)
+
+================================================================================
+AFTER TESTING
+================================================================================
+
+If you want to disable custom login again:
+
+Option 1: Comment in functions.php
+-----------------------------------
+Line 163: // require_once SHIVENDRA_THEME_DIR . '/inc/custom-login.php';
+
+Option 2: Delete config.php
+----------------------------
+rm config.php
+
+Then everything returns to normal WordPress behavior.
+
+================================================================================
+PRODUCTION DEPLOYMENT
+================================================================================
+
+When deploying to production:
+
+1. Create NEW config.php on server
+2. Add your REAL IP (from https://whatismyipaddress.com/)
+3. Use STRONG custom login slug
+4. Test before announcing!
+
+See: CUSTOM-LOGIN-GUIDE.md for full production guide
+
+================================================================================
+CURRENT CONFIGURATION
+================================================================================
+
+Custom Login Slug:  shivendra-test-login
+Whitelisted IPs:    127.0.0.1, ::1, localhost
+Environment:        development
+Debug Mode:         ON
+
+URLs to test:
+- Custom:   http://lifevelo.com/shivendra-test-login
+- Default:  http://lifevelo.com/wp-login.php
+- Admin:    http://lifevelo.com/wp-admin
+
+================================================================================

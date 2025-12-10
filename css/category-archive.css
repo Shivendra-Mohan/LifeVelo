@@ -1,0 +1,196 @@
+/**
+ * Category Archive Page Styles
+ * Custom styles for category archive pages (category.php)
+ *
+ * NOTE: This file contains ONLY category-archive-specific styles.
+ * Shared classes (.posts-list, .blog-post, .post-horizontal, etc.) are in style.css
+ */
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+.category-archive-alignment {
+  width: calc(100% - 200px);
+  max-width: 1240px;
+  margin: 124px auto 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transform: translateZ(0);
+  z-index: 2; /* Above noise texture background */
+}
+
+/* ========================================
+   SECTION 1: CATEGORY HEADER
+   ======================================== */
+.category-archive-header {
+  width: 100%;
+  margin: 0;
+  padding: 40px 60px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.category-archive-header-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.category-archive-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 5px 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.category-archive-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========================================
+   SECTION 2: CATEGORY POSTS
+   ======================================== */
+.category-archive-posts {
+  width: 100%;
+  margin: -15px 0 0 0; /* Negative top margin to reduce gap from header */
+  padding: 0;
+  height: auto;
+  min-height: 400px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Empty state message */
+.category-archive-no-posts {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  padding: 60px 20px;
+}
+
+.category-archive-no-posts svg {
+  color: var(--text-secondary);
+  opacity: 0.5;
+  margin-bottom: 24px;
+}
+
+.category-archive-no-posts h3 {
+  color: var(--text-primary);
+  font-size: 1.75rem;
+  margin: 0 0 12px;
+  font-weight: 600;
+}
+
+.category-archive-no-posts p {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+/* ========================================
+   SECTION 3: PAGINATION
+   ======================================== */
+.category-archive-pagination {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  /* No explicit margin/padding - inherits from .pagination */
+}
+
+/* Scoped pagination styles */
+.category-archive-pagination .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 30px inherited from shared .pagination class in style.css */
+}
+
+.category-archive-pagination .pagination ul {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.category-archive-pagination .pagination li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Tablet (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .category-archive-alignment {
+    width: calc(100% - 40px); /* Matches header */
+    margin: 124px auto 0; /* Same as desktop */
+  }
+
+  .category-archive-header {
+    padding: 32px 40px;
+  }
+
+  .category-archive-title {
+    font-size: 2.5rem;
+  }
+
+  .category-archive-description {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .category-archive-alignment {
+    width: calc(100% - 40px); /* Matches header */
+    margin: 124px auto 0; /* Same as desktop */
+  }
+
+  .category-archive-header {
+    padding: 24px 20px;
+  }
+
+  .category-archive-title {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .category-archive-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .category-archive-posts {
+    margin: 20px 0 0 0; /* Reset to positive margin on mobile */
+    min-height: 300px;
+  }
+
+  .category-archive-no-posts {
+    font-size: 1rem;
+    padding: 40px 16px;
+  }
+
+  .category-archive-no-posts h3 {
+    font-size: 1.5rem;
+  }
+
+  .category-archive-no-posts p {
+    font-size: 1rem;
+  }
+}

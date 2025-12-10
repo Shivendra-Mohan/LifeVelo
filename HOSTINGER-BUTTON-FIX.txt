@@ -1,0 +1,87 @@
+================================================================================
+HOSTINGER "WORDPRESS ADMIN" BUTTON - COMPATIBILITY FIX
+================================================================================
+
+✅ PROBLEM SOLVED!
+
+Your custom login security now supports IP whitelisting, so Hostinger's
+purple "WordPress Admin" button will keep working after you enable custom login!
+
+================================================================================
+QUICK SETUP (Production Deployment)
+================================================================================
+
+STEP 1: Find Your IP
+-------------------
+Visit: https://whatismyipaddress.com/
+Copy your IP (example: 103.45.67.89)
+
+
+STEP 2: Create config.php
+-------------------------
+Copy config-sample.php to config.php and add:
+
+define('CUSTOM_LOGIN_SLUG', 'your-secret-slug-2024');
+
+define('WHITELISTED_IPS', array(
+    '103.45.67.89',    // Your IP here
+));
+
+
+STEP 3: Enable Custom Login
+---------------------------
+functions.php line 163 - Uncomment this line:
+
+require_once SHIVENDRA_THEME_DIR . '/inc/custom-login.php';
+
+
+STEP 4: Test
+-----------
+✅ Custom URL: https://yoursite.com/your-secret-slug-2024
+✅ Hostinger Button: Should work normally (from your IP)
+✅ Default wp-login.php: Blocked for others (404 error)
+
+================================================================================
+HOW IT WORKS
+================================================================================
+
+When someone tries to access wp-login.php:
+
+1. Already logged in? → Allow ✅
+2. IP in whitelist? → Allow ✅ (Hostinger button works!)
+3. Logout/password reset? → Allow ✅
+4. Everything else? → Block (404) ❌
+
+================================================================================
+BENEFITS
+================================================================================
+
+✅ Hostinger dashboard button keeps working (from your IP)
+✅ Custom secure login URL works from anywhere
+✅ Bots and hackers get blocked (404 error)
+✅ No lockout issues (multiple access methods)
+✅ Best balance of security and convenience
+
+================================================================================
+CONFIGURATION FILES
+================================================================================
+
+Main Code:     inc/custom-login.php (lines 97-124)
+Config Sample: config-sample.php (lines 47-59)
+Enable/Disable: functions.php (line 163)
+
+Full Guide:    CUSTOM-LOGIN-GUIDE.md
+
+================================================================================
+SECURITY NOTE
+================================================================================
+
+This solution allows wp-login.php access ONLY from your specified IPs.
+All other IPs will be blocked (404 error).
+
+For maximum security (no whitelist):
+define('WHITELISTED_IPS', array());
+
+But then Hostinger button won't work!
+
+================================================================================

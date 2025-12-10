@@ -1,0 +1,380 @@
+/**
+ * Terms of Use Page Styles
+ * Custom styles for the Terms of Use page template
+ *
+ * NOTE: This file contains ONLY terms-of-use-specific styles.
+ */
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+.terms-of-use-alignment {
+  width: calc(100% - 200px);
+  max-width: 1240px;
+  margin: 124px auto 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  /* Above noise texture background */
+}
+
+/* ========================================
+   CONTENT SECTION
+   ======================================== */
+.terms-of-use-content {
+  background: var(--bg-panel);
+  border: 2px solid rgba(145, 75, 241, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 60px;
+  box-sizing: border-box;
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.terms-of-use-article {
+  width: 100%;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+.terms-of-use-header {
+  margin-bottom: 40px;
+}
+
+.terms-of-use-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* ========================================
+   CONTENT WRAPPER
+   ======================================== */
+.terms-of-use-wrapper {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* Typography */
+.terms-of-use-wrapper h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 40px 0 20px 0;
+  line-height: 1.3;
+}
+
+.terms-of-use-wrapper h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 30px 0 16px 0;
+  line-height: 1.4;
+}
+
+.terms-of-use-wrapper h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 24px 0 12px 0;
+  line-height: 1.4;
+}
+
+.terms-of-use-wrapper p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin: 0 0 20px 0;
+  line-height: 1.8;
+}
+
+.terms-of-use-wrapper strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Lists */
+.terms-of-use-wrapper ul,
+.terms-of-use-wrapper ol {
+  margin: 0 0 24px 0;
+  padding-left: 24px;
+  color: var(--text-secondary);
+}
+
+.terms-of-use-wrapper ul li,
+.terms-of-use-wrapper ol li {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.terms-of-use-wrapper ul {
+  list-style-type: disc;
+}
+
+.terms-of-use-wrapper ol {
+  list-style-type: decimal;
+}
+
+/* Links */
+.terms-of-use-wrapper a {
+  color: rgb(145, 75, 241);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.terms-of-use-wrapper a:hover {
+  color: rgb(165, 95, 255);
+}
+
+/* Code blocks */
+.terms-of-use-wrapper code {
+  background: rgba(145, 75, 241, 0.1);
+  color: rgb(145, 75, 241);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.terms-of-use-wrapper pre {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(145, 75, 241, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+  overflow-x: auto;
+  margin: 0 0 24px 0;
+}
+
+.terms-of-use-wrapper pre code {
+  background: none;
+  padding: 0;
+  color: var(--text-primary);
+}
+
+/* Blockquotes */
+.terms-of-use-wrapper blockquote {
+  border-left: 4px solid rgb(145, 75, 241);
+  padding-left: 20px;
+  margin: 24px 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  background: rgba(145, 75, 241, 0.05);
+  padding: 16px 20px;
+  border-radius: 4px;
+}
+
+/* Tables */
+.terms-of-use-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+}
+
+.terms-of-use-wrapper table th,
+.terms-of-use-wrapper table td {
+  padding: 12px 16px;
+  text-align: left;
+  border: 1px solid rgba(145, 75, 241, 0.2);
+}
+
+.terms-of-use-wrapper table th {
+  background: rgba(145, 75, 241, 0.1);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.terms-of-use-wrapper table td {
+  color: var(--text-secondary);
+}
+
+/* ========================================
+   CONTACT SECTION
+   ======================================== */
+.terms-of-use-contact {
+  background: var(--bg-panel);
+  border: 2px solid rgba(145, 75, 241, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 40px 60px;
+  margin-top: 40px;
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.terms-of-use-contact-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+}
+
+.terms-of-use-contact-intro {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin: 0 0 24px 0;
+  line-height: 1.8;
+}
+
+.terms-of-use-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.terms-of-use-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.terms-of-use-contact-item .contact-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--text-primary);
+  transition: color 0.2s ease;
+  background: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.terms-of-use-contact-item:hover .contact-icon {
+  color: rgb(145, 75, 241);
+}
+
+.terms-of-use-contact-item .contact-link {
+  color: var(--text-primary);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.terms-of-use-contact-item .contact-link:hover {
+  color: rgb(145, 75, 241);
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Tablet (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .terms-of-use-alignment {
+    width: calc(100% - 40px);
+    /* Matches header */
+    margin: 124px auto 0;
+  }
+
+  .terms-of-use-content {
+    padding: 48px;
+  }
+
+  .terms-of-use-title {
+    font-size: 2.5rem;
+  }
+
+  .terms-of-use-wrapper h2 {
+    font-size: 1.75rem;
+  }
+
+  .terms-of-use-wrapper h3 {
+    font-size: 1.35rem;
+  }
+
+  .terms-of-use-contact {
+    padding: 32px 48px;
+  }
+
+  .terms-of-use-contact-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .terms-of-use-alignment {
+    width: calc(100% - 40px);
+    /* Matches header */
+    margin: 124px auto 0;
+  }
+
+  .terms-of-use-content {
+    padding: 32px 24px;
+    border-radius: var(--radius-md);
+  }
+
+  .terms-of-use-header {
+    margin-bottom: 32px;
+  }
+
+  .terms-of-use-title {
+    font-size: 2rem;
+  }
+
+  .terms-of-use-wrapper h2 {
+    font-size: 1.5rem;
+    margin: 32px 0 16px 0;
+  }
+
+  .terms-of-use-wrapper h3 {
+    font-size: 1.25rem;
+    margin: 24px 0 12px 0;
+  }
+
+  .terms-of-use-wrapper h4 {
+    font-size: 1.1rem;
+  }
+
+  .terms-of-use-wrapper p,
+  .terms-of-use-wrapper ul li,
+  .terms-of-use-wrapper ol li {
+    font-size: 1rem;
+  }
+
+  .terms-of-use-wrapper table {
+    font-size: 0.9rem;
+  }
+
+  .terms-of-use-wrapper table th,
+  .terms-of-use-wrapper table td {
+    padding: 8px 12px;
+  }
+
+  .terms-of-use-contact {
+    padding: 24px;
+    margin-top: 32px;
+    border-radius: var(--radius-md);
+  }
+
+  .terms-of-use-contact-title {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+
+  .terms-of-use-contact-intro {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .terms-of-use-contact-item {
+    gap: 10px;
+  }
+
+  .terms-of-use-contact-item .contact-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .terms-of-use-contact-item .contact-link {
+    font-size: 0.9rem;
+  }
+}

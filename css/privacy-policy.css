@@ -1,0 +1,381 @@
+/**
+ * Privacy Policy Page Styles
+ * Custom styles for the Privacy Policy page template
+ *
+ * NOTE: This file contains ONLY privacy-policy-specific styles.
+ */
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+.privacy-policy-alignment {
+  width: calc(100% - 200px);
+  max-width: 1240px;
+  margin: 124px auto 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  /* Above noise texture background */
+}
+
+/* ========================================
+   CONTENT SECTION
+   ======================================== */
+.privacy-policy-content {
+  background: var(--bg-panel);
+  border: 2px solid rgba(145, 75, 241, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 60px;
+  box-sizing: border-box;
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.privacy-policy-article {
+  width: 100%;
+}
+
+/* ========================================
+   HEADER
+   ======================================== */
+.privacy-policy-header {
+  margin-bottom: 40px;
+}
+
+.privacy-policy-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* ========================================
+   CONTENT WRAPPER
+   ======================================== */
+.privacy-policy-wrapper {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+/* Typography */
+.privacy-policy-wrapper h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 40px 0 20px 0;
+  line-height: 1.3;
+}
+
+.privacy-policy-wrapper h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 30px 0 16px 0;
+  line-height: 1.4;
+}
+
+.privacy-policy-wrapper h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 24px 0 12px 0;
+  line-height: 1.4;
+}
+
+.privacy-policy-wrapper p {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin: 0 0 20px 0;
+  line-height: 1.8;
+}
+
+.privacy-policy-wrapper strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Lists */
+.privacy-policy-wrapper ul,
+.privacy-policy-wrapper ol {
+  margin: 0 0 24px 0;
+  padding-left: 24px;
+  color: var(--text-secondary);
+}
+
+.privacy-policy-wrapper ul li,
+.privacy-policy-wrapper ol li {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.privacy-policy-wrapper ul {
+  list-style-type: disc;
+}
+
+.privacy-policy-wrapper ol {
+  list-style-type: decimal;
+}
+
+/* Links */
+.privacy-policy-wrapper a {
+  color: rgb(145, 75, 241);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.privacy-policy-wrapper a:hover {
+  color: rgb(165, 95, 255);
+}
+
+/* Code blocks */
+.privacy-policy-wrapper code {
+  background: rgba(145, 75, 241, 0.1);
+  color: rgb(145, 75, 241);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+}
+
+.privacy-policy-wrapper pre {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(145, 75, 241, 0.3);
+  border-radius: 8px;
+  padding: 20px;
+  overflow-x: auto;
+  margin: 0 0 24px 0;
+}
+
+.privacy-policy-wrapper pre code {
+  background: none;
+  padding: 0;
+  color: var(--text-primary);
+}
+
+/* Blockquotes */
+.privacy-policy-wrapper blockquote {
+  border-left: 4px solid rgb(145, 75, 241);
+  padding-left: 20px;
+  margin: 24px 0;
+  font-style: italic;
+  color: var(--text-secondary);
+  background: rgba(145, 75, 241, 0.05);
+  padding: 16px 20px;
+  border-radius: 4px;
+}
+
+/* Tables */
+.privacy-policy-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0;
+}
+
+.privacy-policy-wrapper table th,
+.privacy-policy-wrapper table td {
+  padding: 12px 16px;
+  text-align: left;
+  border: 1px solid rgba(145, 75, 241, 0.2);
+}
+
+.privacy-policy-wrapper table th {
+  background: rgba(145, 75, 241, 0.1);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.privacy-policy-wrapper table td {
+  color: var(--text-secondary);
+}
+
+/* ========================================
+   CONTACT SECTION
+   ======================================== */
+.privacy-policy-contact {
+  background: var(--bg-panel);
+  border: 2px solid rgba(145, 75, 241, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 40px 60px;
+  margin-top: 40px;
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.privacy-policy-contact-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 16px 0;
+  line-height: 1.3;
+}
+
+.privacy-policy-contact-intro {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  margin: 0 0 24px 0;
+  line-height: 1.8;
+}
+
+.privacy-policy-contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.privacy-policy-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.contact-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--text-primary);
+  transition: color 0.2s ease;
+  background: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
+.privacy-policy-contact-item:hover .contact-icon {
+  color: rgb(145, 75, 241);
+}
+
+.contact-link {
+  color: var(--text-primary);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+  color: rgb(145, 75, 241);
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Tablet (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .privacy-policy-alignment {
+    width: calc(100% - 40px);
+    /* Matches header */
+    margin: 124px auto 0;
+  }
+
+  .privacy-policy-content {
+    padding: 48px;
+  }
+
+  .privacy-policy-title {
+    font-size: 2.5rem;
+  }
+
+  .privacy-policy-wrapper h2 {
+    font-size: 1.75rem;
+  }
+
+  .privacy-policy-wrapper h3 {
+    font-size: 1.35rem;
+  }
+
+  .privacy-policy-contact {
+    padding: 32px 48px;
+  }
+
+  .privacy-policy-contact-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .privacy-policy-alignment {
+    width: calc(100% - 40px);
+    /* Matches header */
+    margin: 124px auto 0;
+  }
+
+  .privacy-policy-content {
+    padding: 32px 24px;
+    border-radius: var(--radius-md);
+  }
+
+  .privacy-policy-header {
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+  }
+
+  .privacy-policy-title {
+    font-size: 2rem;
+  }
+
+  .privacy-policy-wrapper h2 {
+    font-size: 1.5rem;
+    margin: 32px 0 16px 0;
+  }
+
+  .privacy-policy-wrapper h3 {
+    font-size: 1.25rem;
+    margin: 24px 0 12px 0;
+  }
+
+  .privacy-policy-wrapper h4 {
+    font-size: 1.1rem;
+  }
+
+  .privacy-policy-wrapper p,
+  .privacy-policy-wrapper ul li,
+  .privacy-policy-wrapper ol li {
+    font-size: 1rem;
+  }
+
+  .privacy-policy-wrapper table {
+    font-size: 0.9rem;
+  }
+
+  .privacy-policy-wrapper table th,
+  .privacy-policy-wrapper table td {
+    padding: 8px 12px;
+  }
+
+  .privacy-policy-contact {
+    padding: 24px;
+    margin-top: 32px;
+    border-radius: var(--radius-md);
+  }
+
+  .privacy-policy-contact-title {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+
+  .privacy-policy-contact-intro {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .privacy-policy-contact-item {
+    gap: 10px;
+  }
+
+  .contact-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contact-link {
+    font-size: 0.9rem;
+  }
+}

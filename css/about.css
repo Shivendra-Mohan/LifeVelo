@@ -1,0 +1,530 @@
+/**
+ * About Page Styles
+ * Custom styles for the About page template
+ *
+ * NOTE: This file contains ONLY about-page-specific styles.
+ */
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+.about-alignment {
+  width: calc(100% - 200px);
+  max-width: 1240px;
+  margin: 124px auto 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 2;
+  /* Above noise texture background */
+}
+
+/* ========================================
+   ABOUT AREA SECTION
+   ======================================== */
+.about-area {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.about-area>div:first-child {
+  /* Profile Card Div */
+  flex-shrink: 0;
+}
+
+.about-area>div:last-child {
+  /* About Text Div */
+  flex: 1;
+}
+
+/* About Text Content - Frosted Glass */
+.about-text-content {
+  background: var(--bg-panel);
+  border: 2px solid rgba(145, 75, 241, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.about-text-content h1,
+.about-text-content h2,
+.about-text-content h3 {
+  color: var(--text-primary);
+  margin-top: 0;
+}
+
+.about-text-content p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.about-text-content ul,
+.about-text-content ol {
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.about-text-content a {
+  color: rgb(145, 75, 241);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.about-text-content a:hover {
+  color: rgb(165, 95, 255);
+}
+
+/* ========================================
+   CONTACT AREA SECTION
+   ======================================== */
+
+/* Contact Content - Frosted Glass */
+.about-contact-content {
+  background: var(--bg-panel);
+  border: 2px solid rgba(145, 75, 241, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 40px 60px;
+  backdrop-filter: var(--backdrop-blur);
+  -webkit-backdrop-filter: var(--backdrop-blur);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Two-Column Grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  position: relative;
+}
+
+/* Vertical Divider Line */
+.contact-grid::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(145, 75, 241, 0.3);
+  transform: translateX(-50%);
+}
+
+/* Section Titles & Intros */
+.contact-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 12px 0;
+  line-height: 1.3;
+}
+
+.contact-section-intro {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  margin: 0 0 24px 0;
+  line-height: 1.6;
+}
+
+/* Left Column: Connect With Me */
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-method-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.contact-method-item .contact-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--text-primary);
+  transition: color 0.2s ease;
+}
+
+.contact-method-item:hover .contact-icon {
+  color: rgb(145, 75, 241);
+}
+
+.contact-method-item .contact-link {
+  color: var(--text-primary);
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.contact-method-item .contact-link:hover {
+  color: rgb(145, 75, 241);
+}
+
+/* Right Column: Newsletter Form */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.newsletter-input {
+  width: 100%;
+  padding: 14px 20px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(145, 75, 241, 0.3);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-size: 1rem;
+  font-family: inherit;
+  transition: all 0.2s ease;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.newsletter-input::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.newsletter-input:focus {
+  border-color: rgb(145, 75, 241);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+/* Prevent white autofill background */
+.newsletter-input:-webkit-autofill,
+.newsletter-input:-webkit-autofill:hover,
+.newsletter-input:-webkit-autofill:focus {
+  -webkit-text-fill-color: var(--text-primary) !important;
+  -webkit-box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.3) inset !important;
+  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.3) inset !important;
+  border: 2px solid rgba(145, 75, 241, 0.3) !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Fix text selection appearance - prevent white background on select */
+.newsletter-input::selection {
+  background: rgba(145, 75, 241, 0.4);
+  color: var(--text-primary);
+}
+
+.newsletter-input::-moz-selection {
+  background: rgba(145, 75, 241, 0.4);
+  color: var(--text-primary);
+}
+
+.newsletter-button {
+  width: 100%;
+  padding: 14px 28px;
+  background: rgb(145, 75, 241);
+  border: none;
+  border-radius: var(--radius-md);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.newsletter-button:hover {
+  background: rgb(165, 95, 255);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(145, 75, 241, 0.3);
+}
+
+.newsletter-button:active {
+  transform: translateY(0);
+}
+
+.newsletter-note {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin: 0;
+  opacity: 0.7;
+  text-align: center;
+}
+
+.newsletter-message {
+  margin-bottom: 12px;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: left;
+  transition: all 0.3s ease;
+  display: none;
+  align-items: center;
+  gap: 10px;
+
+  /* Glassmorphism Base - Default transparent, color defined in state */
+  background: transparent;
+  backdrop-filter: blur(10px) brightness(0.4);
+  /* Added brightness dimming */
+  -webkit-backdrop-filter: blur(10px) brightness(0.4);
+  border: 2px solid rgba(145, 75, 241, 0.5);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+  color: #fcfcfc;
+
+  /* Position absolute to match footer style if desired, or keep relative flow */
+  position: absolute;
+  bottom: 80px;
+  right: 0;
+  width: auto;
+  white-space: nowrap;
+  z-index: 10;
+}
+
+.newsletter-message.show {
+  display: flex;
+}
+
+.newsletter-message.success {
+  border-color: rgba(80, 255, 120, 0.6);
+  color: #6bff8b;
+  /* Dark Green Glass */
+  background: rgba(20, 60, 25, 0.6);
+}
+
+.newsletter-message.error {
+  border-color: rgba(255, 80, 80, 0.6);
+  color: #ff6b6b;
+  /* Dark Red Glass */
+  background: rgba(80, 20, 20, 0.6);
+}
+
+.newsletter-message::before {
+  content: '';
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.newsletter-message.success::before {
+  content: '💐';
+  /* Or keep consistent checkmark if preferred, sticking to existing About style for now */
+  background-image: none;
+  font-size: 20px;
+  line-height: 1;
+}
+
+.newsletter-message.error::before {
+  /* Using SVG checkmark or X? User mentioned consistent style. Let's use the checkmark from style.css for consistency if they asked for 'same way' */
+  content: '✓';
+  background-image: none;
+  font-size: 1rem;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Tablet (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .about-alignment {
+    width: calc(100% - 40px);
+    /* Matches header */
+    margin: 124px auto 0;
+  }
+
+  .about-area {
+    gap: 32px;
+  }
+
+  .about-text-content {
+    padding: 32px;
+  }
+
+  .about-text-content h1 {
+    font-size: 2rem;
+  }
+
+  .about-text-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .about-text-content h3 {
+    font-size: 1.35rem;
+  }
+
+  .about-text-content p {
+    font-size: 1rem;
+  }
+
+  .about-contact-content {
+    padding: 32px 48px;
+  }
+
+  .contact-grid {
+    gap: 40px;
+  }
+
+  .contact-section-title {
+    font-size: 1.35rem;
+  }
+
+  .contact-section-intro {
+    font-size: 0.95rem;
+  }
+}
+
+/* Small Tablet / Large Mobile (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .about-area {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .about-text-content {
+    padding: 32px;
+  }
+
+  .contact-grid {
+    gap: 32px;
+  }
+
+  .about-contact-content {
+    padding: 28px 40px;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .about-alignment {
+    width: calc(100% - 40px);
+    /* Matches header */
+    margin: 124px auto 0;
+  }
+
+  .about-area {
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .about-text-content {
+    padding: 24px;
+    border-radius: var(--radius-md);
+  }
+
+  .about-text-content h1 {
+    font-size: 1.75rem;
+  }
+
+  .about-text-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .about-text-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .about-text-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .about-text-content ul,
+  .about-text-content ol {
+    font-size: 0.95rem;
+    padding-left: 20px;
+  }
+
+  .about-contact-content {
+    padding: 24px;
+    border-radius: var(--radius-md);
+  }
+
+  .contact-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* Hide desktop vertical line on mobile */
+  .contact-grid::before {
+    display: none;
+  }
+
+  /* Show horizontal line between sections */
+  .contact-connect::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: rgba(145, 75, 241, 0.3);
+    margin: 32px 0;
+  }
+
+  .contact-newsletter {
+    margin-top: 0;
+  }
+
+  .contact-connect,
+  .contact-newsletter {
+    text-align: center;
+  }
+
+  .contact-section-title {
+    font-size: 1.25rem;
+  }
+
+  .contact-section-intro {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+
+  .contact-methods {
+    gap: 14px;
+    align-items: center;
+  }
+
+  .contact-method-item {
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .contact-method-item .contact-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .contact-method-item .contact-link {
+    font-size: 0.95rem;
+  }
+
+  .newsletter-form {
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .newsletter-input {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .newsletter-button {
+    padding: 12px 24px;
+    font-size: 0.95rem;
+  }
+
+  .newsletter-note {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+}

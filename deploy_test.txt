@@ -1,0 +1,3 @@
+This is a test file to verify if the GitHub Action is deploying changes to the correct folder.
+Timestamp: 2025-12-10
+If you see this file on your Hostinger File Manager, the deployment path is CORRECT.

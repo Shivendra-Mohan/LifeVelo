@@ -1,0 +1,169 @@
+/**
+ * Journal Page Styles
+ * Custom styles for the Journal page template
+ *
+ * NOTE: This file contains ONLY journal-specific styles.
+ * Shared classes (.posts-list, .blog-post, .post-horizontal, etc.) are in style.css
+ */
+
+/* ========================================
+   CONTAINER
+   ======================================== */
+.journal-alignment {
+  width: calc(100% - 200px);
+  max-width: 1240px;
+  margin: 124px auto 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transform: translateZ(0);
+  z-index: 2; /* Above noise texture background */
+}
+
+/* ========================================
+   SECTION 1: JOURNAL HEADER
+   ======================================== */
+.journal-header {
+  width: 100%;
+  margin: 0;
+  padding: 40px 60px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.journal-header-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.journal-main-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 5px 0;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.journal-description {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin: 0;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========================================
+   SECTION 2: JOURNAL POSTS
+   ======================================== */
+.journal-posts {
+  width: 100%;
+  margin: -15px 0 0 0; /* Only top margin */
+  padding: 0;
+  height: auto;
+  min-height: 400px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.no-posts-message {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  padding: 40px 20px;
+}
+
+/* ========================================
+   SECTION 3: PAGINATION
+   ======================================== */
+.journal-pagination {
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+  /* No explicit margin/padding - inherits from .pagination */
+}
+
+/* Scoped pagination styles */
+.journal-pagination .pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 30px inherited from shared .pagination class in style.css */
+}
+
+.journal-pagination .pagination ul {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.journal-pagination .pagination li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Tablet (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .journal-alignment {
+    width: calc(100% - 40px); /* Matches header */
+    margin: 124px auto 0; /* Same as desktop */
+  }
+
+  .journal-header {
+    padding: 32px 40px;
+  }
+
+  .journal-main-title {
+    font-size: 2.5rem;
+  }
+
+  .journal-description {
+    font-size: 1rem;
+  }
+}
+
+/* Mobile (max-width: 768px) */
+@media (max-width: 768px) {
+  .journal-alignment {
+    width: calc(100% - 40px); /* Matches header */
+    margin: 124px auto 0; /* Same as desktop */
+  }
+
+  .journal-header {
+    padding: 24px 20px;
+    border-radius: var(--radius-md);
+  }
+
+  .journal-main-title {
+    font-size: 2rem;
+    margin-bottom: 16px;
+  }
+
+  .journal-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .journal-posts {
+    margin: 20px 0 0 0;
+    min-height: 300px;
+  }
+
+  .no-posts-message {
+    font-size: 1rem;
+    padding: 30px 16px;
+  }
+}
