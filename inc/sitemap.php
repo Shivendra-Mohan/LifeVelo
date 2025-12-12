@@ -77,9 +77,16 @@ add_action('init', 'shivendra_sitemap_handler', 1);
  * Generate XML sitemap
  */
 function shivendra_generate_sitemap() {
+    // Clean output buffer to remove any accidental whitespace/headers
+    if (ob_get_length()) {
+        ob_end_clean();
+    }
+    
     // Set proper headers
-    header('Content-Type: application/xml; charset=utf-8');
-    header('X-Robots-Tag: noindex, follow', true);
+    if (!headers_sent()) {
+        header('Content-Type: application/xml; charset=utf-8');
+        header('X-Robots-Tag: noindex, follow', true);
+    }
 
     // Start XML output
     echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
