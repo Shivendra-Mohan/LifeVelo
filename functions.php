@@ -68,6 +68,20 @@ define('SHIVENDRA_THEME_DIR', get_template_directory());
 define('SHIVENDRA_THEME_URI', get_template_directory_uri());
 
 // =============================================================================
+// LOAD CONFIGURATION (if exists)
+// =============================================================================
+
+/**
+ * Load config.php for production settings
+ * This file contains custom login slug, API keys, etc.
+ * Only loads if file exists (not required for development)
+ */
+$config_file = SHIVENDRA_THEME_DIR . '/config.php';
+if (file_exists($config_file)) {
+    require_once $config_file;
+}
+
+// =============================================================================
 // LOAD MODULAR COMPONENTS
 // =============================================================================
 
