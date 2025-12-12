@@ -158,9 +158,9 @@ require_once SHIVENDRA_THEME_DIR . '/inc/cache.php';
 /**
  * Custom Login URL Security
  * Changes wp-login.php to custom URL for enhanced security
- * NOTE: Disabled for local development, enable on production deployment
+ * NOTE: Only active when config.php exists with CUSTOM_LOGIN_SLUG defined
  */
-// require_once SHIVENDRA_THEME_DIR . '/inc/custom-login.php';
+require_once SHIVENDRA_THEME_DIR . '/inc/custom-login.php';
 
 // =============================================================================
 // THEME INITIALIZATION COMPLETE
