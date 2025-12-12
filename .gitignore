@@ -40,6 +40,7 @@ vendor/
 # Environment-specific configuration
 # NOTE: These files should be created manually on server
 .env
+config.php
 config-local.php
 wp-config-local.php
 
