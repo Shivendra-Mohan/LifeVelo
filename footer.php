@@ -1,6 +1,5 @@
     <!-- ========================================
          SITE FOOTER
-         Test deployment: Updated via Git workflow
          ======================================== -->
     <footer class="site-footer">
         <div class="footer-content">

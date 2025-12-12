@@ -103,7 +103,12 @@ https://shivendramohan.com/blog/building-with-ai
 }
 
 /* helper: ensure body doesn't create an unexpected stacking context that blocks backdrop filters */
-html,
+html {
+  overflow-y: scroll;
+  -webkit-transform: none;
+  transform: none;
+}
+
 body {
   -webkit-transform: none;
   transform: none;
@@ -1366,7 +1371,18 @@ h3 {
   margin-right: auto;
 }
 
-/* .no-posts and .content classes removed - moved to page-specific CSS files */
+/* No Posts Message */
+.no-posts {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  padding: 80px 20px;
+}
+
+.no-posts p {
+  margin: 0;
+  color: var(--text-secondary);
+}
 
 /* =============================================
    BLOG POST CARDS
@@ -2686,7 +2702,7 @@ img.loaded {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
-  padding: 80px 20px;
+  padding: 160px 20px 80px;
 }
 
 /* 404 Illustration */
@@ -2903,7 +2919,7 @@ img.loaded {
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .error-404-container {
-    padding: 60px 20px;
+    padding: 140px 20px 60px;
   }
 
   .error-404-number {

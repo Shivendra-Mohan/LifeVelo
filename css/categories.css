@@ -94,12 +94,22 @@
   position: relative;
 }
 
+/* Only apply flex when posts list contains no-posts message */
+.category-posts .posts-list:has(.no-posts-message),
+.category-posts .posts-list:has(.select-category-message) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 400px;
+}
+
 .select-category-message,
 .no-posts-message {
   text-align: center;
   color: var(--text-secondary);
   font-size: 1.1rem;
   padding: 40px 20px;
+  width: 100%;
 }
 
 .category-pagination {
