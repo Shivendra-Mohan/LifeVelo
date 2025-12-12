@@ -131,27 +131,24 @@ add_action('login_init', 'shivendra_block_default_login', 1);
 
 /**
  * Block wp-admin access for non-logged-in users
+ * Runs very early to prevent WordPress from redirecting
  */
 function shivendra_block_wp_admin() {
-    // Only run in admin area
-    if (!is_admin()) {
+    // Check if accessing admin area (but not AJAX)
+    if (!is_admin() || (defined('DOING_AJAX') && DOING_AJAX)) {
         return;
     }
 
-    // Allow AJAX requests
-    if (defined('DOING_AJAX') && DOING_AJAX) {
-        return;
-    }
-
-    // Block admin access if not logged in - return 404 instead of redirect
+    // Block if not logged in - show 404 instead of redirect
     if (!is_user_logged_in()) {
-        // Send 404 error (no redirect, more secure)
-        wp_safe_redirect(home_url('/404'));
-        exit;
+        status_header(404);
+        nocache_headers();
+        include(get_query_template('404'));
+        die();
     }
 }
-// Use 'auth_redirect' filter to intercept before WordPress redirects
-add_action('auth_redirect', 'shivendra_block_wp_admin', 1);
+// Hook very early - before WordPress processes authentication
+add_action('init', 'shivendra_block_wp_admin', 0);
 
 /**
  * Change login URL in WordPress
