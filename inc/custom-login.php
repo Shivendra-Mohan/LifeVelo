@@ -74,9 +74,18 @@ function shivendra_block_default_login() {
         return;
     }
 
-    // Allow if custom login flag is set
-    if (isset($_GET['shivendra_custom_login'])) {
+    // Allow if custom login flag is set (GET or POST)
+    if (isset($_GET['shivendra_custom_login']) || isset($_POST['shivendra_custom_login'])) {
         return;
+    }
+
+    // Also allow if coming from custom login URL (check referer)
+    if (isset($_SERVER['HTTP_REFERER'])) {
+        $referer = $_SERVER['HTTP_REFERER'];
+        $custom_slug = SHIVENDRA_CUSTOM_LOGIN_SLUG;
+        if (strpos($referer, '/' . $custom_slug) !== false) {
+            return;
+        }
     }
 
     // Allow if user is already logged in
@@ -244,6 +253,19 @@ function shivendra_custom_login_admin_notice() {
     <?php
 }
 add_action('admin_notices', 'shivendra_custom_login_admin_notice');
+
+/**
+ * Add hidden field to login form to preserve custom login flag
+ * This ensures POST requests are also recognized as coming from custom URL
+ */
+function shivendra_add_custom_login_field() {
+    // Only add if we're on the custom login page
+    if (isset($_GET['shivendra_custom_login']) ||
+        (isset($_SERVER['HTTP_REFERER']) && strpos($_SERVER['HTTP_REFERER'], SHIVENDRA_CUSTOM_LOGIN_SLUG) !== false)) {
+        echo '<input type="hidden" name="shivendra_custom_login" value="1" />';
+    }
+}
+add_action('login_form', 'shivendra_add_custom_login_field');
 
 /**
  * HOW TO USE:
