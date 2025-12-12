@@ -133,6 +133,11 @@ add_action('login_init', 'shivendra_block_default_login', 1);
  * Block wp-admin access for non-logged-in users
  */
 function shivendra_block_wp_admin() {
+    // Only run in admin area
+    if (!is_admin()) {
+        return;
+    }
+
     // Allow AJAX requests
     if (defined('DOING_AJAX') && DOING_AJAX) {
         return;
@@ -145,7 +150,8 @@ function shivendra_block_wp_admin() {
         exit;
     }
 }
-add_action('admin_init', 'shivendra_block_wp_admin', 1);
+// Use 'auth_redirect' filter to intercept before WordPress redirects
+add_action('auth_redirect', 'shivendra_block_wp_admin', 1);
 
 /**
  * Change login URL in WordPress
