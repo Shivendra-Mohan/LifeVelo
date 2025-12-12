@@ -138,19 +138,10 @@ function shivendra_block_wp_admin() {
         return;
     }
 
-    // Block admin access if not logged in
+    // Block admin access if not logged in - return 404 instead of redirect
     if (!is_user_logged_in()) {
-        // Redirect to custom login URL
-        $custom_slug = SHIVENDRA_CUSTOM_LOGIN_SLUG;
-        $custom_login_url = home_url('/' . $custom_slug);
-
-        // Add redirect back parameter
-        if (isset($_SERVER['REQUEST_URI'])) {
-            $redirect_to = urlencode($_SERVER['REQUEST_URI']);
-            $custom_login_url = add_query_arg('redirect_to', $redirect_to, $custom_login_url);
-        }
-
-        wp_redirect($custom_login_url);
+        // Send 404 error (no redirect, more secure)
+        wp_safe_redirect(home_url('/404'));
         exit;
     }
 }
