@@ -380,5 +380,104 @@ function shivendras_blog_customize_register($wp_customize) {
         'type'        => 'number',
         'priority'    => 20,
     ));
+
+    // =========================================================================
+    // 7. DISCORD WEBHOOK SETTINGS
+    // =========================================================================
+
+    $wp_customize->add_section('discord_webhook_settings', array(
+        'title'       => __('Discord Webhook', 'shivendras-blog'),
+        'description' => __('Automatically share new blog posts to your Discord channel', 'shivendras-blog'),
+        'priority'    => 160,
+    ));
+
+    // Enable/Disable Discord Webhook
+    $wp_customize->add_setting('discord_webhook_enabled', array(
+        'default'           => false,
+        'sanitize_callback' => 'rest_sanitize_boolean',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('discord_webhook_enabled', array(
+        'label'       => __('Enable Discord Webhook', 'shivendras-blog'),
+        'description' => __('Turn on to automatically post new blog posts to Discord', 'shivendras-blog'),
+        'section'     => 'discord_webhook_settings',
+        'type'        => 'checkbox',
+        'priority'    => 10,
+    ));
+
+    // Discord Webhook URL
+    $wp_customize->add_setting('discord_webhook_url', array(
+        'default'           => '',
+        'sanitize_callback' => 'esc_url_raw',
+        'transport'         => 'refresh',
+    ));
+
+    $wp_customize->add_control('discord_webhook_url', array(
+        'label'       => __('Discord Webhook URL', 'shivendras-blog'),
+        'description' => __('Paste your Discord webhook URL here. Get it from Server Settings > Integrations > Webhooks', 'shivendras-blog'),
+        'section'     => 'discord_webhook_settings',
+        'type'        => 'url',
+        'priority'    => 20,
+    ));
 }
 add_action('customize_register', 'shivendras_blog_customize_register');
+
+/**
+ * Add Discord Test Button to Customizer
+ */
+function shivendra_discord_customizer_controls() {
+    ?>
+    <style>
+        .discord-test-button {
+            margin: 15px 0;
+            padding: 10px 15px;
+            background: #5865F2;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            width: 100%;
+        }
+        .discord-test-button:hover {
+            background: #4752C4;
+        }
+        .discord-help-text {
+            background: #f0f0f1;
+            padding: 12px;
+            border-left: 4px solid #5865F2;
+            margin: 10px 0;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+    </style>
+    <script type="text/javascript">
+        (function($) {
+            wp.customize.section('discord_webhook_settings', function(section) {
+                section.expanded.bind(function(isExpanded) {
+                    if (isExpanded) {
+                        // Add test button if not already added
+                        if ($('.discord-test-button').length === 0) {
+                            var testButton = '<form method="post" action="<?php echo esc_url(admin_url('admin-post.php')); ?>" style="margin-top: 15px;">';
+                            testButton += '<input type="hidden" name="action" value="discord_test_webhook">';
+                            testButton += '<?php echo wp_nonce_field('discord_test_action', 'discord_test_nonce', true, false); ?>';
+                            testButton += '<button type="submit" class="discord-test-button">🧪 Send Test Message</button>';
+                            testButton += '</form>';
+                            testButton += '<div class="discord-help-text"><strong>How to get Discord Webhook URL:</strong><br>';
+                            testButton += '1. Go to your Discord server<br>';
+                            testButton += '2. Click Server Settings → Integrations<br>';
+                            testButton += '3. Click "Webhooks" → "New Webhook"<br>';
+                            testButton += '4. Choose a channel and copy the webhook URL<br>';
+                            testButton += '5. Paste it above and enable the webhook</div>';
+
+                            $('#customize-control-discord_webhook_url').after(testButton);
+                        }
+                    }
+                });
+            });
+        })(jQuery);
+    </script>
+    <?php
+}
+add_action('customize_controls_print_footer_scripts', 'shivendra_discord_customizer_controls');

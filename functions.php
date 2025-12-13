@@ -176,6 +176,12 @@ require_once SHIVENDRA_THEME_DIR . '/inc/cache.php';
  */
 require_once SHIVENDRA_THEME_DIR . '/inc/custom-login.php';
 
+/**
+ * Discord Webhook Integration
+ * Automatically sends new blog posts to Discord channel
+ */
+require_once SHIVENDRA_THEME_DIR . '/inc/discord-webhook.php';
+
 // =============================================================================
 // THEME INITIALIZATION COMPLETE
 // =============================================================================
@@ -195,4 +201,5 @@ require_once SHIVENDRA_THEME_DIR . '/inc/custom-login.php';
  * - schema.php        : Schema.org structured data
  * - export.php        : Data export functionality
  * - cache.php         : Transients API caching system
+ * - discord-webhook.php: Discord integration for new posts
  */
