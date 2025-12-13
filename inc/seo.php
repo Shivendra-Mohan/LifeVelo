@@ -101,8 +101,8 @@ function shivendra_seo_meta_tags() {
         $title = $site_name;
         $description = get_bloginfo('description') ? get_bloginfo('description') : 'A journal by Shivendra Mohan';
         $url = $site_url;
-        // Use Open Graph optimized image for homepage (1200x630)
-        $image = get_template_directory_uri() . '/assets/images/LifeVelo Logo 1200 txt 2.png';
+        // Use profile logo for WhatsApp/social media (1200x1200)
+        $image = get_template_directory_uri() . '/assets/images/Profile Logo.png';
     }
 
     // Clean up description
