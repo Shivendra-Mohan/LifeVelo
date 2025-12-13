@@ -102,7 +102,7 @@ function shivendra_seo_meta_tags() {
         $description = get_bloginfo('description') ? get_bloginfo('description') : 'A journal by Shivendra Mohan';
         $url = $site_url;
         // Use optimized OG image for social media (1200x630)
-        $image = get_template_directory_uri() . '/assets/images/Latest.png';
+        $image = get_template_directory_uri() . '/assets/images/latest02.png';
     }
 
     // Clean up description
