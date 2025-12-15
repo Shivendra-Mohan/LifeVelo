@@ -52,7 +52,7 @@ A modern, AI-assisted WordPress blog theme built with performance, SEO, and secu
 ### Method 2: Git Clone (Recommended)
 ```bash
 cd wp-content/themes/
-git clone https://github.com/YOUR-USERNAME/lifevelo-wp-theme.git lifevelo
+git clone https://github.com/Shivendra-Mohan/LifeVelo.git lifevelo
 ```
 
 ### Method 3: FTP Upload
